@@ -1,3 +1,5 @@
+# find the first and ending index of target 
+
 class Solution(object):
     def searchRange(self, nums, target):
         return [self.sbinary(nums, target), self.ebinary(nums, target)]
