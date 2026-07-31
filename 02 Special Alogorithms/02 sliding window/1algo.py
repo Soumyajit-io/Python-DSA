@@ -3,16 +3,16 @@
 
 # Find max sum of sub array of k
 l = [7,1,2,5,8,4,9,3,6]
-msum = 0
+# msum = 0
 k=3 
-idx = -1
-for i in range(0,len(l)-k):
-   sumele = 0
-   for j in range(i,i+k):
-      sumele+=l[j]
-   if msum<sumele:
-      msum =sumele
-      idx = i 
+# idx = -1
+# for i in range(0,len(l)-k):
+#    sumele = 0
+#    for j in range(i,i+k):
+#       sumele+=l[j]
+#    if msum<sumele:
+#       msum =sumele
+#       idx = i 
 
 # print(msum,idx)
 
@@ -25,7 +25,7 @@ prevsum = sum(l[:k])
 
 maxsum = prevsum
 
-i ,j= 1, k
+i ,j = 1, k
 n = len(l)
 maxidx = -1
 while (j<n):
