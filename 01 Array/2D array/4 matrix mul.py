@@ -19,4 +19,3 @@ def multiplyMatrices(self, a, b):
             return None
         return res
 
-print(res)
