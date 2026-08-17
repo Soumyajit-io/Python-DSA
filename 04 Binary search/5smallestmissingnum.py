@@ -1,5 +1,6 @@
 nums= [0,1,2,3,4,5,6,7]
 #      0,1,2,3,4,5,6,7, 8  9 10 11
+nums= [0,1,2,3,4,5,7,8]
 lo = 0
 hi = len(nums)-1
 res =-1
@@ -12,3 +13,4 @@ while lo<=hi:
       hi = mid -1
 
 print(res)
+print(lo)

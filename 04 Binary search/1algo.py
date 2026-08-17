@@ -10,5 +10,5 @@ while (lo<=hi):
    elif nums[mid]>target: hi = mid-1
    else: lo = mid+1
 
-# after lops ends lo ---> higher bound
+# after loops ends lo ---> higher bound
 #                 hi ---> lower bound 

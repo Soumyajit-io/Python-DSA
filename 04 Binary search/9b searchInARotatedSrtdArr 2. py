@@ -1,0 +1,60 @@
+
+def search(nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: bool
+    """
+    if len(nums)==1:
+        if target ==nums[0]: return 0
+        else : return -1
+    if len(nums)==2:
+        if target ==nums[0]: return 0
+        elif target ==nums[1]: return 1
+        else : return -1
+
+    lo = 0
+    hi = len(nums)-1
+    pvt =-1 #smallest
+#    finding pivot
+    while(lo<=hi):
+        mid = lo+(hi-lo)//2
+        if nums[mid]<=nums[mid+1] and nums[mid]>nums[mid-1] :
+            if nums[mid]!=nums[mid-1]:
+                pvt = mid 
+                break
+            else:
+                hi=mid-1
+        if nums[mid]>nums[mid+1] and nums[mid]>nums[mid-1]:
+            if nums[mid]!=nums[mid-1]:
+                pvt = mid +1
+                break
+            else:
+                hi=mid-1
+        elif nums[mid] > nums[hi]:
+            lo = mid
+        elif nums[mid] < nums[hi]:
+            hi = mid
+    
+    # finding taregt
+    if pvt ==0:
+        lo = 0
+        hi = len(nums)-1
+    elif target>=nums[0]: 
+        lo = 0
+        hi=pvt-1
+    else:
+        lo = pvt
+        hi = len(nums)-1
+    
+    while(lo<=hi):
+        mid=lo+(hi-lo)//2
+        if nums[mid]==target:
+            if nums[mid]!=nums[mid-1]:
+                return mid
+            else:
+                hi=mid-1
+        elif nums[mid]>target: hi = mid-1
+        else: lo= mid+1    
+    return -1
+search([2,5,6,0,0,1,2],0)
